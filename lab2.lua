@@ -1,4 +1,4 @@
---lab2: bring the box from this point to another point 
+--lab2: move the box to different points
 
 Go(InitialPose)
 DO(7, OFF)
