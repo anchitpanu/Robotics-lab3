@@ -23,12 +23,30 @@ local offsetY = {
    2*pitch
 }
 
+--10ก้อน4-2-2-1
+   --local offsetX = {
+   -- แถวล่าง 4 ก้อน
+   --0, pitch, 2*pitch, 3*pitch,
+   -- แถวที่ 2 (เยื้องครึ่งช่อง)
+   --pitch/2, 3*pitch/2, 5*pitch/2,
+   -- แถวที่ 3
+   --pitch, 2*pitch,
+   -- แถวบน
+   --3*pitch/2
+   --local offsetY = {
+   -- แถวล่าง
+   --0,0,0,0,
+   -- แถวที่ 2
+   --pitch,pitch,pitch,
+   -- แถวที่ 3
+   --2*pitch,2*pitch,
+   -- แถวบน
+   --3*pitch
+
+
 
 local i = 1
 local t = 1
-
-
-
 
 while(i <= 6)
 do
