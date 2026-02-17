@@ -1,0 +1,56 @@
+--P1,P2 pick
+--P3 corner1
+--initial ref point
+
+Go(InitialPose)
+DO(1, OFF)
+DO(2, OFF)
+Wait(2000)
+
+x = 0
+y = 0  --ลบไปทางemer
+z = 0
+
+row = 2
+col = 2
+layer = 2
+
+Sync()
+
+for l=1, layer, 1
+do
+  Sync()
+  for i=1, row, 1
+  do
+    Sync()
+    for j=1, col, 1
+      do   --pick
+      MovL(P1)
+      MovL(P2)
+      DO(1, ON)
+      Wait(500)
+      MovL(P1)
+
+      --place in col
+      Go(InitialPose)
+      MovJ(RelPoint(P3, {x,y,z,0}))
+      MovJ(RelPoint(P3, {x,y,z-35,0}))
+      DO(1, OFF)
+      DO(2, ON)
+      Wait(500)
+      DO(2, OFF)
+      Go(InitialPose)
+      y = y - 35
+      end
+
+  y = 0
+  x = x - 35
+  end
+ 
+ x = 0
+ y = 0
+ z = z+35
+ end
+ 
+  
+
