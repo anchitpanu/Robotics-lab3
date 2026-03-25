@@ -1,0 +1,76 @@
+-- P1/P2 = PICK CAR 
+-- P3/P4 = PLACE CAR
+-- P5 = PICK PLATE
+-- P6/P7 = PLACE PLATE
+-- P8 = PLACE CAR 
+
+Go(InitialPose)
+DO(1, OFF)
+DO(2, OFF)
+
+while (true)
+do
+  Sync()
+  if (DI(10)==ON)
+  then
+    Wait(2000)
+
+    -- PICK CAR
+    MovL(P1)
+    MovL(P2)
+    DO(2, ON)
+    Wait(1000)
+    MovL(P1)
+
+    -- PLACE CAR
+    Go(InitialPose)
+    MovL(P3)
+    MovL(P4)
+    DO(2, OFF)
+    DO(1, ON)
+    Wait(1000)
+    MovL(P3)
+    DO(1, OFF)
+
+    -- PICK PLATE
+    Go(InitialPose)
+    MovL(P1)
+    MovL(P5)
+    DO(2, ON)
+    Wait(1000)
+    MovL(P1)
+
+    -- PLACE PLATE
+    Go(InitialPose)
+    MovL(P6)
+    MovL(P7)
+    DO(2, OFF)
+    DO(1, ON)
+    Wait(1000)
+    MovL(P6)
+    DO(1, OFF)
+
+    -- PICK CAR
+    Go(InitialPose)
+    MovL(P3)
+    MovL(P4)
+    DO(2, ON)
+    Wait(1000)
+    MovL(P3)
+
+    -- PLACE CAR
+    MovL(P6)
+    MovL(P8)
+    DO(2, OFF)
+    DO(1, ON)
+    Wait(1000)
+    MovL(P6)
+    DO(1, OFF)
+    Go(InitialPose)
+
+    DO(7, ON)
+    Wait(5000)
+    DO(7, OFF)
+  end
+end
+Sync()
