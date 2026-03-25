@@ -70,9 +70,9 @@ do
     DO(1, OFF)
     Go(InitialPose)
 
-    DO(7, ON)
+    DO(8, ON)
     Wait(5000)
-    DO(7, OFF)
+    DO(8, OFF)
   end
 end
 Sync()
